@@ -8,7 +8,9 @@ interface MovieTitle {
 const VideoTitle: React.FC<MovieTitle> = ({ title, overview }) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   return (
-    <div className="w-screen aspect-video pt-[25%] px-24  text-white absolute bg-gradient-to-r from-black">
+    <div className="w-screen aspect-video pt-[15%] px-24  text-white absolute bg-gradient-to-r from-black">
+    {/* // <div className="w-[95vw] aspect-video pt-[15%] px-24  text-white absolute bg-gradient-to-r from-black"> */}
+
       <h1 className="text-6xl font-bold">{title}</h1>
       <p
         className={`py-6 text-lg w-1/3 ${

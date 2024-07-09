@@ -13,11 +13,10 @@ const VideoBackground: React.FC<MovieVideo> = ({ movieId }) => {
   );
   
   return (
-    <div className="w-screen">
+    <div className="w-screen ">
       <iframe
        className="w-screen aspect-video"
-        src={"https://www.youtube.com/embed/" + movieTrailer?.key+"?&autoplay=1&mute=1&loop=1"}
-        frameBorder="0"
+        src={"https://www.youtube.com/embed/" + movieTrailer?.key + "?&loop=1&autoplay=1&mute=1&controls=0&modestbranding=0&rel=0"}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
     </div>

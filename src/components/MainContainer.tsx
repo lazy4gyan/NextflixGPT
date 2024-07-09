@@ -12,7 +12,7 @@ const MainContainer = () => {
   const { original_title, overview, id } = mainMovies; // in future i have to replace title with logo of movies
 
   return (
-    <div>
+    <div className="flex w-screen justify-center bg-black bg-blend-difference">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>

@@ -1,3 +1,5 @@
+import { randomAvatarProfileImage } from "./helper";
+
 // assets
 export const LOGO = "/NETFLIX_LOGO.png";
 export const BACKGROUND_IMAGE = "/Movies-Wallpaper.jpg";
@@ -20,4 +22,12 @@ export const API_OPTIONS = {
     }
 }
 
-export const IMG_CDN = "https://image.tmdb.org/t/p/original/"
+export const IMG_CDN = "https://image.tmdb.org/t/p/w780/" // w780 ot original
+
+// export const IMG_URL = `https://api.themoviedb.org/3/movie/${movie_id}/images`
+
+const randomNumber:number = randomAvatarProfileImage(1,35);
+export const AVATAR_URL = `https://cdn.jsdelivr.net/gh/alohe/avatars/png/memo_${randomNumber}.png`
+
+// memo_1-35
+// vibrent_1-27

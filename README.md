@@ -34,3 +34,4 @@ export default {
 1. Refactor the code
 2. Re-create the navbar with proper navigation menus
 3. Make the code modular wit type safe
+4. Add different types of movies

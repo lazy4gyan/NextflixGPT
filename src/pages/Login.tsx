@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useState } from "react";
 import Header from "../components/Header";
-import { BACKGROUND_IMAGE, PROFILE_AVATAR_IMAGE } from "../utils/constants";
+import { AVATAR_URL, BACKGROUND_IMAGE, PROFILE_AVATAR_IMAGE } from "../utils/constants";
 import {
   ErrorMessage,
   ValidateFormData,
@@ -48,15 +48,13 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: nameRef?.current?.value,
-            photoURL: PROFILE_AVATAR_IMAGE,
+            photoURL: AVATAR_URL ? AVATAR_URL:PROFILE_AVATAR_IMAGE,
           })
             .then(() => {
               // Profile updated!
               const { uid, email, displayName } = auth.currentUser || {};
-              const photoURL = PROFILE_AVATAR_IMAGE;
-              console.log(photoURL)
+              const photoURL = AVATAR_URL ? AVATAR_URL:PROFILE_AVATAR_IMAGE;
               dispatch(addUser({ uid, email, displayName, photoURL }));
-              // ...
             })
             .catch((error) => {
               // An error occurred
