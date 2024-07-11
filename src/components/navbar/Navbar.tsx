@@ -5,20 +5,20 @@ import AccountMenu from "./AccountMenu";
 import { LOGO } from "../../utils/constants";
 import { LuSearch } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa";
-import { useSelector } from "react-redux";
 
 const TOP_OFFSET = 66;
 
+type User = Record<string, string>;
 
-const Navbar = () => {
-  const user = useSelector((store: any) => store.user);
+const Navbar:React.FC<User> = ({user}) => {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showAccountMenu, setAccountMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
+  
   useEffect(() => {
     const handleScroll = () => {
-      if (window.screenY >= TOP_OFFSET) {
+      if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
       } else {
         setShowBackground(false);
@@ -29,6 +29,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
@@ -53,7 +54,7 @@ const Navbar = () => {
       ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}
       `}
       >
-        <img src={LOGO} alt="logo" className="h-4 lg:h-7" />
+        <img src={LOGO} alt="logo" className="h-6 lg:h-16" />
         <div
           className="
         flex-row
