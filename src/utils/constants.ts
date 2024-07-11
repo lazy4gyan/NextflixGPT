@@ -3,7 +3,8 @@ import { randomAvatarProfileImage } from "./helper";
 // assets
 export const LOGO = "/NETFLIX_LOGO.png";
 export const BACKGROUND_IMAGE = "/Movies-Wallpaper.jpg";
-export const PROFILE_AVATAR_IMAGE = "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+export const PROFILE_AVATAR_IMAGE = "https://assets.codepen.io/t-1/user-default-avatar.jpg?format=auto&version=0&width=80&height=80"
+// "https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
 
 // validation regex pattern
 export const EMAIL_REGEX_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

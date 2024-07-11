@@ -35,3 +35,6 @@ export default {
 2. Re-create the navbar with proper navigation menus
 3. Make the code modular wit type safe
 4. Add different types of movies
+
+Firebase live url
+https://netflixgpt-7e7f3.web.app

@@ -5,12 +5,15 @@ import AccountMenu from "./AccountMenu";
 import { LOGO } from "../../utils/constants";
 import { LuSearch } from "react-icons/lu";
 import { FaRegBell } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 
 const TOP_OFFSET = 66;
 
-type User = Record<string, string>;
+interface User {
+  photoURL: string; 
+}
 
-const Navbar:React.FC<User> = ({user}) => {
+const Navbar:React.FC<{user:User}> = ({user}) => {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showAccountMenu, setAccountMenu] = useState(false);
@@ -38,6 +41,7 @@ const Navbar:React.FC<User> = ({user}) => {
   const toggleAccountMenu = useCallback(() => {
     setAccountMenu((current) => !current);
   }, []);
+
   return (
     <nav className="w-full fixed z-40">
       <div
@@ -55,7 +59,9 @@ const Navbar:React.FC<User> = ({user}) => {
       `}
       >
         <img src={LOGO} alt="logo" className="h-6 lg:h-16" />
-        <div
+       {user &&
+        <>
+         <div
           className="
         flex-row
         ml-8
@@ -73,7 +79,7 @@ const Navbar:React.FC<User> = ({user}) => {
           className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative"
         >
           <p className="text-white text-sm">Browse</p>
-          {/* <IoIosArrowDown className="text-white transition"/> */}
+          <FaChevronDown className={`text-white transition absolute -right-5  ${showMobileMenu ? 'rotate-180':'rotate-0'}`}/>
           <MobileMenu visible={showMobileMenu} />
         </div>
         <div className="flex flex-row ml-auto gap-7 items-center">
@@ -89,11 +95,13 @@ const Navbar:React.FC<User> = ({user}) => {
           >
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <img src={user?.photoURL} alt="avatar-image" />
-              {/* <FaChevronDown className={`text-white transition ${showAccountMenu ? 'rotate-180':'rotate-0'}`}/> */}
-              <AccountMenu visible={showAccountMenu} avatar={user?.photoURL} />
+              <FaChevronDown className={`text-white absolute top-6 -right-5 transition ${showAccountMenu ? 'rotate-180':'rotate-0'}`}/>
             </div>
+              <AccountMenu visible={showAccountMenu} avatar={user?.photoURL} />
           </div>
         </div>
+        </>
+       }
       </div>
     </nav>
   );

@@ -1,5 +1,5 @@
-export function filterImages(array:any) {
-    return array.filter(item => 
+export function filterImages(array:Record<string,string>[]) {
+    return array.filter((item:Record<string,string>) => 
       item.iso_639_1 === "en" && item.file_path.includes(".png")
     );
   }
